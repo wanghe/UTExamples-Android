@@ -51,6 +51,7 @@ public class ViewImplTest {
         target.presenter(mock);
 
 
+        // CASE 1: View.pressButton() 会调用 Presenter.changeCounter()
         target.pressButton();
         Mockito.verify(mock).changeCounter();
     }
