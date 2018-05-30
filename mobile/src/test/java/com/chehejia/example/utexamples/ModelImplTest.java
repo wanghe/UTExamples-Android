@@ -79,7 +79,7 @@ public class ModelImplTest {
 
         int MAX_TIMES = 10;
 
-        final CountDownLatch signal = new CountDownLatch(1);
+        final CountDownLatch signal = new CountDownLatch(MAX_TIMES);
         Runnable callback = new Runnable() {
             @Override
             public void run() {

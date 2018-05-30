@@ -88,7 +88,6 @@ public class PresenterImplTest {
         int expect = mockModel.counter();
 
 
-
         mTarget.changeCountingWay(false);
         mTarget.changeCounter();
         assertEquals("PresenterImpl.increaseCounter() 应该让 Model.counter()的值 -1", -- expect, mockModel.counter());
@@ -103,7 +102,6 @@ public class PresenterImplTest {
 
         MockView mockView = new MockView();
         mTarget.view(mockView);
-
 
 
         // 设置预期值
