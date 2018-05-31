@@ -108,7 +108,7 @@ public class PresenterImplTest {
         String expect = "blah blah blah...";
 
         mTarget.saySomething(expect);
-        
+
         // 验证预期值与真实值是否一致.
         assertEquals("PresenterImpl.saySomething() 传入的参数应该给到 Model.words()", expect, mockModel.words());
         assertEquals("PresenterImpl.saySomething() 传入的参数应该给到 View.displayWords()", expect, mockView.mDisplayWords);
@@ -195,17 +195,17 @@ public class PresenterImplTest {
         }
 
         @Override
-        public void pressButton() {
+        public void onChangeSwitch(boolean on) {
 
         }
 
         @Override
-        public void inputText(String text) {
+        public void onPressButton() {
 
         }
 
         @Override
-        public void changeSwitch(boolean on) {
+        public void onInputText(String text) {
 
         }
 

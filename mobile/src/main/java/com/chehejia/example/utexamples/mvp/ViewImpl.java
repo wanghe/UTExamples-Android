@@ -26,15 +26,15 @@ public class ViewImpl implements Contract.View {
     @BindView(R.id.etInput) EditText etInput;
 
     @OnClick(R.id.btnDoSomething) void onButtonPressed() {
-        pressButton();
+        onPressButton();
     }
 
     @OnCheckedChanged(R.id.swSwitch1) void onSwitchChanged(boolean checked) {
-        changeSwitch(checked);
+        onChangeSwitch(checked);
     }
 
     @OnTextChanged(R.id.etInput) void onTextsChanged(CharSequence txt, int a, int b, int c) {
-        inputText(txt.toString());
+        onInputText(txt.toString());
     }
 
 
@@ -61,17 +61,17 @@ public class ViewImpl implements Contract.View {
     }
 
     @Override
-    public void changeSwitch(boolean on) {
+    public void onChangeSwitch(boolean on) {
         presenter().changeCountingWay(on);
     }
 
     @Override
-    public void pressButton() {
+    public void onPressButton() {
         presenter().changeCounter();
     }
 
     @Override
-    public void inputText(String text) {
+    public void onInputText(String text) {
         presenter().saySomething(text);
     }
 

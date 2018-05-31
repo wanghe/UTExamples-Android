@@ -52,7 +52,7 @@ public class ViewImplTest {
 
 
         // CASE 1: View.pressButton() 会调用 Presenter.changeCounter()
-        target.pressButton();
+        target.onPressButton();
         Mockito.verify(mock).changeCounter();
     }
 
@@ -62,11 +62,11 @@ public class ViewImplTest {
         target.presenter(mock);
 
         // CASE 1: View.changeSwitch(boolean) 会调用 Presenter.changeCountingWay(boolean) 接口
-        target.changeSwitch(true);
+        target.onChangeSwitch(true);
         Mockito.verify(mock).changeCountingWay(true);
 
         // CASE 2: View.changeSwitch(boolean) 会调用 Presenter.changeCountingWay(boolean) 接口
-        target.changeSwitch(false);
+        target.onChangeSwitch(false);
         Mockito.verify(mock).changeCountingWay(false);
     }
 
@@ -77,7 +77,7 @@ public class ViewImplTest {
 
         // CASE: View.inputText(String) 会调用 Presenter.saySomething(String) 接口
         String EXPECT = "blah baba blah blah";
-        target.inputText(EXPECT);
+        target.onInputText(EXPECT);
         Mockito.verify(mock).saySomething(EXPECT);
     }
 

@@ -49,7 +49,7 @@ public class ViewImplTest {
         assertEquals("保持断言环境是干净的", null, mock.words);
 
         String expect = "blah blah blah";
-        mTarget.inputText(expect);
+        mTarget.onInputText(expect);
 
         assertEquals("View.inputText() 设置的内容应该传递给引用的Presenter", expect, mock.words);
     }
@@ -59,10 +59,10 @@ public class ViewImplTest {
         MockPresenter mock = new MockPresenter();
         mTarget.presenter(mock);
 
-        mTarget.changeSwitch(false);
+        mTarget.onChangeSwitch(false);
         assertEquals(false, mock.mCountingWay);
 
-        mTarget.changeSwitch(true);
+        mTarget.onChangeSwitch(true);
         assertEquals(true, mock.mCountingWay);
     }
 
@@ -75,11 +75,11 @@ public class ViewImplTest {
         int expect = 0;
         assertEquals(expect, mock.counter);
         mock.changeCountingWay(true);
-        mTarget.pressButton();
+        mTarget.onPressButton();
         assertEquals(expect + 1, mock.counter);
 
         mock.changeCountingWay(false);
-        mTarget.pressButton();
+        mTarget.onPressButton();
         assertEquals(expect, mock.counter);
 
     }
