@@ -38,7 +38,6 @@ public class ViewImpl implements Contract.View {
     }
 
 
-
     public void bind(View rootView) {
 
         if (null != mUnbinder) {

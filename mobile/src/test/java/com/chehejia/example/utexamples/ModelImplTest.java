@@ -31,13 +31,11 @@ public class ModelImplTest {
 
     @Test
     public void testPresenterSetterAndGetter() throws Exception {
-        MockPresenter mock = new MockPresenter();
+            MockPresenter mock = new MockPresenter();
 
-
-        assertEquals("清理断言环境", null, mTarget.presenter());
-        mTarget.presenter(mock);
-        assertEquals("Model.presenter() 得到的实例应该与 Model.presenter(Presenter) 设置的值一致", mock, mTarget.presenter());
-
+            assertNull("清理断言环境", mTarget.presenter());
+            mTarget.presenter(mock);
+            assertEquals("Model.presenter() 得到的实例应该与 Model.presenter(Presenter) 设置的值一致", mock, mTarget.presenter());
     }
 
     @Test

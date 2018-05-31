@@ -3,6 +3,7 @@ package com.chehejia.example.utexamples;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.chehejia.example.utexamples.mvp.Contract;
@@ -38,8 +39,6 @@ public class ViewImplTest {
         mTarget.presenter(mock);
 
         assertEquals("View.presenter() 得到的实例应该与 View.presenter(Presenter) 设置的是同一个 ", mock, mTarget.presenter());
-
-
     }
 
     @Test

@@ -32,7 +32,7 @@ public class PresenterImplTest {
     @Test
     public void testViewGetterAndSetter() throws Exception {
 
-        Contract.View mExpect = new ViewImpl();
+        Contract.View mExpect = new MockView();
         mTarget.view(mExpect);
 
 
@@ -41,12 +41,12 @@ public class PresenterImplTest {
 
 
         mTarget.view(null);
-        assertEquals(null, mTarget.view());
+        assertNull(mTarget.view());
     }
 
     @Test
     public void testModelGetterAndSetter() throws Exception {
-        Contract.Model mExpect = new ModelImpl();
+        Contract.Model mExpect = new MockModel();
         mTarget.model(mExpect);
 
 
@@ -54,7 +54,7 @@ public class PresenterImplTest {
                 mExpect, mTarget.model());
 
         mTarget.model(null);
-        assertEquals(null, mTarget.model());
+        assertNull(mTarget.model());
     }
 
 
@@ -108,6 +108,7 @@ public class PresenterImplTest {
         String expect = "blah blah blah...";
 
         mTarget.saySomething(expect);
+        
         // 验证预期值与真实值是否一致.
         assertEquals("PresenterImpl.saySomething() 传入的参数应该给到 Model.words()", expect, mockModel.words());
         assertEquals("PresenterImpl.saySomething() 传入的参数应该给到 View.displayWords()", expect, mockView.mDisplayWords);
