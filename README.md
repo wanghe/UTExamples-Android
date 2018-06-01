@@ -4,6 +4,7 @@
 * `mobile/` 例子工程根目录
 * `mobile/src/main/` 例子工程代码目录
 * `mobile/src/test/` 例子工程单元测试目录
+* `mobile/src/androidTest/` 例子UI测试目录
 
 
 
