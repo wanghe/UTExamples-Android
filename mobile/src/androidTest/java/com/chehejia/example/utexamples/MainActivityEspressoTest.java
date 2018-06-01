@@ -1,6 +1,8 @@
 package com.chehejia.example.utexamples;
 
+import android.content.Intent;
 import android.support.test.espresso.Espresso;
+import android.support.test.espresso.IdlingRegistry;
 import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
@@ -9,28 +11,35 @@ import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
-public class MainActivityTest {
+public class MainActivityEspressoTest {
 
     @Rule
-    public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class, true, true);
+    public ActivityTestRule<MainActivity> rule = null;
 
     @Before
-    public void setup() {}
+    public void setup() {
+        rule = new ActivityTestRule<>(MainActivity.class, true, false);
+        rule.launchActivity(null);
+    }
 
     @After
-    public void teardown() {}
+    public void teardown() {
+        rule.finishActivity();
+    }
 
     @Test
     public void testCountingNumbers() throws Exception {
 
         // assert View state: completely displayed.
         Espresso.onView(ViewMatchers.withId(R.id.btnDoSomething))
-                .check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()));
+                .check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()))
+                .check(ViewAssertions.matches(ViewMatchers.withText("DO SOMETHING")));
         Espresso.onView(ViewMatchers.withId(R.id.tvCounter))
                 .check(ViewAssertions.matches(ViewMatchers.isCompletelyDisplayed()));
         Espresso.onView(ViewMatchers.withId(R.id.swSwitch1))
@@ -100,6 +109,5 @@ public class MainActivityTest {
         // display it.
         Espresso.onView(ViewMatchers.withId(R.id.tvWords))
                 .check(ViewAssertions.matches(ViewMatchers.withText(expect)));
-
     }
 }
