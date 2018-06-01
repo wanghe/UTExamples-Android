@@ -51,7 +51,7 @@
         <EditText
             android:id="@+id/etInput"
             android:lines="1"
-            android:hint="Say something"
+            android:hint="@string/etInput_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
