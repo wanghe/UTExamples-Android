@@ -100,7 +100,6 @@ public class ModelImplTest {
     static class MockPresenter implements Contract.Presenter {
 
         public Contract.View mView = null;
-        public int counter = 0;
         public String words = null;
 
         @Override
