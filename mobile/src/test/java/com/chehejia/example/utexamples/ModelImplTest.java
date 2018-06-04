@@ -53,7 +53,8 @@ public class ModelImplTest {
     public void testWordsSetterAndGetter() throws Exception {
         String[] expects = new String[] {
                 "a",
-                "abcdefghijklmnopqrstuvwxyz"
+                "abcdefghijklmnopqrstuvwxyz",
+                null
         };
 
         for (String expect : expects) {
